@@ -15,7 +15,7 @@ function initMap() {
 
 async function fetchWeatherData() {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${OPENWEATHER_API_KEY}&units=metric`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${06743c9842aa603ffe1d3fdfd0ce71da}&units=metric`;
         const response = await fetch(url);
         const data = await response.json();
         const rainVolume = data.rain ? data.rain["1h"] || 0 : 0;

@@ -1,6 +1,6 @@
 const OPENWEATHER_API_KEY = "06743c9842aa603ffe1d3fdfd0ce71da";
-const LATITUDE = -20.7367;  // Coordenadas do Termas dos Laranjais
-const LONGITUDE = -48.9105;
+const LATITUDE = -23.6714875;  // Coordenadas Jurubatuba - SP
+const LONGITUDE = -46.696401;
 let map;
 
 function initMap() {

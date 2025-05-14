@@ -52,11 +52,7 @@ function updateAlert(rainVolume) {
         console.log("E-mail de alerta enviado.");
         }).catch((error) => {
         console.error("Erro ao enviar e-mail:", error);
-});
-
         });
-    }
+    })
 }
 
-    }
-}

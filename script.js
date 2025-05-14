@@ -10,7 +10,7 @@ function initMap() {
     });
 
     fetchWeatherData();
-    setInterval(fetchWeatherData, 300000); // Atualiza a cada 5 minutos
+    setInterval(fetchWeatherData, 300000); // Atualiza a cada 5 minutos (300.000 ms)
 }
 
 async function fetchWeatherData() {

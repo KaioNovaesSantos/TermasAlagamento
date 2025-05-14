@@ -53,5 +53,3 @@ function updateAlert(rainVolume) {
         }).catch((error) => {
         console.error("Erro ao enviar e-mail:", error);
         });
-    }
-

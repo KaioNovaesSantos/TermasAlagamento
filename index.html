@@ -2,28 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Alerta de Alagamento - Jurubatuba - SP</title>
+    <title>Alerta de Alagamento - Avenida Engenheiro Alberto de Zagottis, Jurubatuba - SP</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDB5_grqT-0O4ly-OjVRoRykfDN6MYRoE"></script>
 </head>
-<body>
-    <h1>Monitoramento de - Avenida Engenheiro Alberto de Zagottis, Jurubatuba - SP</h1>
+<body onload="initMap()">
+    <h1>Monitoramento de Alagamento - Avenida Engenheiro Alberto de Zagottis, Jurubatuba - SP</h1>
     <div id="alert-box">Verificando previsão de chuva...</div>
     <div id="map"></div>
-
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init("YOUR_USER_ID"); // Substitua por seu User ID do EmailJS
-        })();
-    </script>
-
-    <!-- Seu script principal -->
     <script src="script.js"></script>
-
-    <!-- Google Maps API com callback -->
-    <script async 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDB5_grqT-0O4ly-OjVRoRykfDN6MYRoE&callback=initMap">
-    </script>
 </body>
 </html>

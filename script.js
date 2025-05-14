@@ -44,12 +44,14 @@ function updateAlert(rainVolume) {
 
         // Envia e-mail de alerta
         emailjs.send("service_y1t2fhg", "alerta_chuva", {
-        to_name: "Piloto Jurubatuba",
-        to_email: "miguelgobetti@gmail.com",
-        rain_volume: rainVolume,
-        time: new Date().toLocaleString("pt-BR")
+            to_name: "Piloto Jurubatuba",
+            to_email: "miguelgobetti@gmail.com",
+            rain_volume: rainVolume,
+            time: new Date().toLocaleString("pt-BR")
         }).then(() => {
-        console.log("E-mail de alerta enviado.");
+            console.log("E-mail de alerta enviado.");
         }).catch((error) => {
-        console.error("Erro ao enviar e-mail:", error);
+            console.error("Erro ao enviar e-mail:", error);
         });
+    }
+}

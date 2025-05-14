@@ -54,5 +54,4 @@ function updateAlert(rainVolume) {
         console.error("Erro ao enviar e-mail:", error);
         });
     }
-}
 

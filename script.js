@@ -1,5 +1,5 @@
 const OPENWEATHER_API_KEY = "06743c9842aa603ffe1d3fdfd0ce71da";
-const LATITUDE = -23.6714875;  // Coordenadas Jurubatuba - SP
+const LATITUDE = -23.6714875;  // Jurubatuba - SP
 const LONGITUDE = -46.696401;
 let map;
 
@@ -10,7 +10,7 @@ function initMap() {
     });
 
     fetchWeatherData();
-    setInterval(fetchWeatherData, 300000); // Atualiza a cada 5 minutos (300.000 ms)
+    setInterval(fetchWeatherData, 300000); // Atualiza a cada 5 minutos
 }
 
 async function fetchWeatherData() {
@@ -53,5 +53,30 @@ function updateAlert(rainVolume) {
         }).catch((error) => {
             console.error("Erro ao enviar e-mail:", error);
         });
+
+        // Envia alerta por SMS
+        sendSMSAlert(rainVolume);
+    }
+}
+
+async function sendSMSAlert(rainVolume) {
+    try {
+        const response = await fetch("https://seu-endpoint.cloudfunctions.net/sendRainAlert", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                rain_volume: rainVolume,
+                location: "Jurubatuba - SP",
+                time: new Date().toLocaleString("pt-BR")
+            })
+        });
+
+        if (response.ok) {
+            console.log("Alerta SMS enviado com sucesso");
+        } else {
+            console.error("Falha ao enviar alerta SMS");
+        }
+    } catch (error) {
+        console.error("Erro na chamada do webhook:", error);
     }
 }

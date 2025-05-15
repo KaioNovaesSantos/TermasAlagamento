@@ -61,7 +61,7 @@ function updateAlert(rainVolume) {
 
 async function sendSMSAlert(rainVolume) {
     try {
-        const response = await fetch("https://seu-endpoint.cloudfunctions.net/sendRainAlert", {
+        const response = await fetch("https://alerta-chuva.cloudfunctions.net/sendRainAlert", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
